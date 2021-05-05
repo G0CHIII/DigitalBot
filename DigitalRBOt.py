@@ -101,6 +101,7 @@ def callback_worker(call):
 # print('done')
 
 if "HEROKU" in list(os.environ.keys()):
+    print('I HEROKU')
     logger = telebot.logger
     telebot.logger.setLevel(logging.INFO)
 
@@ -112,7 +113,8 @@ if "HEROKU" in list(os.environ.keys()):
     @server.route("/")
     def webhook():
         bot.remove_webhook()
-        bot.set_webhook(url="https://secure-dawn-49690.herokuapp.com/")
+        bot.set_webhook(url="https://secure-dawn-49690.herokuapp.com/"  + tokenBot.TOKEN)
+        print('set webhook')
         return "?", 200
     server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
 else:
