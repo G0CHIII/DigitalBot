@@ -19,13 +19,4 @@ Pillow==8.0.0
 Pygments==2.7.1
 pypiwin32==223
 pyTelegramBotAPI==3.7.7
-pytoml==0.1.21
-pywin32==228
 requests==2.25.1
-sh==1.14.1
-six==1.15.0
-sqlparse==0.4.1
-toml==0.10.1
-urllib3==1.26.4
-Werkzeug==1.0.1
-zipp==3.3.2
