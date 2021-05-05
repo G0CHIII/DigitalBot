@@ -7,7 +7,8 @@ import logging
 import telebot
 
 # Указываем токен
-bot = telebot.TeleBot('1625118390:AAGK2RDBJxd3c_i39v9yYbl-0EmB5MoZbEQ')
+TOKEN = '1625118390:AAGK2RDBJxd3c_i39v9yYbl-0EmB5MoZbEQ'
+bot = telebot.TeleBot(TOKEN)
 # Импортируем типы из модуля, чтобы создавать кнопки
 from telebot import types
 
@@ -106,17 +107,20 @@ if "HEROKU" in list(os.environ.keys()):
     telebot.logger.setLevel(logging.INFO)
 
     server = Flask(__name__)
-    @server.route("/bot", methods=['POST'])
+    @server.route('/' + TOKEN, methods=['POST'])
     def getMessage():
-        bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+        json_string = request.get_data().decode('utf-8')
+        update = telebot.types.Update.de_json(json_string)
+        bot.process_new_updates([update])
         return "!", 200
+
     @server.route("/")
     def webhook():
         bot.remove_webhook()
-        bot.set_webhook(url="https://secure-dawn-49690.herokuapp.com/"  + tokenBot.TOKEN)
+        bot.set_webhook(url="https://secure-dawn-49690.herokuapp.com/" + TOKEN)
         print('set webhook')
         return "?", 200
-    server.run(host="0.0.0.0", port=os.environ.get('PORT', 80))
+    server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
 else:
     # если переменной окружения HEROKU нету, значит это запуск с машины разработчика.
     # Удаляем вебхук на всякий случай, и запускаем с обычным поллингом.
