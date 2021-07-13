@@ -14,19 +14,23 @@ from telebot import types
 
 # Списки для рандома (по содержанию)
 
-watchlist = ['Медный всадник А.С. Пушкин: https://www.mariinsky.ru/playbill/repertoire/ballet/bronze_horseman/',
-             'Вишневый сад А.П. Чехов: https://www.youtube.com/watch?v=L9FfoPSzNRY',
-             'Вишневый сад А.П. Чехов: https://www.youtube.com/watch?v=yDJOSUHDpQI',
-             'Дон Кихот М. де Сервантес: https://www.kinopoisk.ru/film/650699/',
-             'Дон Кихот М. де Сервантес: https://artchive.ru/publications/894~Don_Kikhot_s_luchshimi_kartinami_i_illjustratsijami_ot_Dore_i_Dali_do_Serova_i_Zvereva']
+watchlist = ['"Медный всадник" А.С. Пушкин: https://www.mariinsky.ru/playbill/repertoire/ballet/bronze_horseman/',
+             '"Вишневый сад" А.П. Чехов: https://www.youtube.com/watch?v=L9FfoPSzNRY',
+             '"Вишневый сад" А.П. Чехов: https://www.youtube.com/watch?v=yDJOSUHDpQI',
+             '"Дон Кихот" М. де Сервантес: https://www.kinopoisk.ru/film/650699/',
+             '"Дон Кихот" М. де Сервантес: https://artchive.ru/publications/894~Don_Kikhot_s_luchshimi_kartinami_i_illjustratsijami_ot_Dore_i_Dali_do_Serova_i_Zvereva',
+             '"Преступление и наказание" Ф.М. Достоевский: https://ok.ru/video/1333906705013']
 
-readlist = ['Дон Кихот М. де Сервантес: https://www.liveinternet.ru/users/noche_de_mayo/post132031822/',
-            'Дон Кихот М. де Сервантес: https://mel.fm/mneniye_eksperta/317248-film_adaptation_don_quixote',
-            'Вишневый сад А.П. Чехов: http://chehov-lit.ru/chehov/vospominaniya/stanislavskij.htm',
-            'Вишневый сад А.П. Чехов: https://polka.academy/articles/482']
+readlist = ['"Дон Кихот" М. де Сервантес: https://www.liveinternet.ru/users/noche_de_mayo/post132031822/',
+            '"Дон Кихот" М. де Сервантес: https://mel.fm/mneniye_eksperta/317248-film_adaptation_don_quixote',
+            '"Вишневый сад" А.П. Чехов: http://chehov-lit.ru/chehov/vospominaniya/stanislavskij.htm',
+            '"Вишневый сад" А.П. Чехов: https://polka.academy/articles/482',
+            '"Преступление и наказание" Ф.М. Достоевский: https://dostoevskyworld.ru/',
+            '"Преступление и наказание" Ф.М. Достоевский: https://arzamas.academy/mag/419-dost',
+            '"Преступление и наказание" Ф.М. Достоевский: https://ru.rbth.com/zhizn/256-dostoevsky-munch-krik']
 
-listenlist = ['Медный всадник А.С. Пушкин: https://www.youtube.com/watch?v=8stiZXNoC9g',
-              'Дон Кихот М. де Сервантес: https://soundcloud.com/polyarinov/6-don-kikhot-idealnyy-metaroman']
+listenlist = ['"Медный всадник" А.С. Пушкин: https://www.youtube.com/watch?v=8stiZXNoC9g',
+              '"Дон Кихот" М. де Сервантес: https://soundcloud.com/polyarinov/6-don-kikhot-idealnyy-metaroman']
 
 # Метод, который получает сообщения и обрабатывает их
 @bot.message_handler(content_types=['text'])
